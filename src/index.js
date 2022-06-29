@@ -14,4 +14,4 @@ async function fetchRecipesAndCreatePage() {
   await createRecipePage(breakfastMeals, 'breakfast');
 }
 
-// Display icons
+fetchRecipesAndCreatePage();
