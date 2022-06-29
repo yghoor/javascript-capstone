@@ -2,24 +2,16 @@ import './style.css';
 import displayIcons from './displayIcons.js';
 import createRecipePage from './createPage.js';
 
-// Select icon placeholders on page
+let breakfastMeals;
 
-const logoImg = document.getElementById('logo-icon');
-const breakfastImg = document.getElementById('breakfast-icon');
-const vegetarianImg = document.getElementById('vegetarian-icon');
-const dessertImg = document.getElementById('dessert-icon');
-const heartEmptyImgs = document.querySelectorAll('.heart-empty-icon');
-const heartFilledImgs = document.querySelectorAll('.heart-filled-icon');
+async function fetchRecipesAndCreatePage() {
+  await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast')
+    .then((response) => response.json())
+    .then((result) => {
+      breakfastMeals = result.meals;
+    });
+
+  await createRecipePage(breakfastMeals, 'breakfast');
+}
 
 // Display icons
-
-logoImg.src = logoIcon;
-breakfastImg.src = breakfastIcon;
-vegetarianImg.src = vegetarianIcon;
-dessertImg.src = dessertIcon;
-heartEmptyImgs.forEach((img) => {
-  img.src = heartEmptyIcon;
-});
-heartFilledImgs.forEach((img) => {
-  img.src = heartFilledIcon;
-});
