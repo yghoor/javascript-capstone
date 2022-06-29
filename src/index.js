@@ -1,5 +1,6 @@
 import './style.css';
 import displayIcons from './displayIcons.js';
+import createRecipePage from './createPage.js';
 
 // Select icon placeholders on page
 
