@@ -1,10 +1,5 @@
 import './style.css';
-import logoIcon from './logo-icon.png';
-import breakfastIcon from './breakfast-icon.png';
-import vegetarianIcon from './vegetarian-icon.png';
-import dessertIcon from './dessert-icon.png';
-import heartEmptyIcon from './heart-empty-icon.png';
-import heartFilledIcon from './heart-filled-icon.png';
+import displayIcons from './displayIcons.js';
 
 // Select icon placeholders on page
 
