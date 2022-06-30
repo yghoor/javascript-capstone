@@ -1,6 +1,6 @@
 import './style.css';
 import displayIcons from './displayIcons.js';
-import createRecipePage from './createPage.js';
+import { addModal, createRecipePage } from './createPage.js';
 
 let breakfastMeals;
 
