@@ -29,7 +29,7 @@ export default function createRecipePage(recipeArray, category) {
           <img src="${heartFilledIcon}" alt="" class="heart-filled-icon d-none" />
         </button>
       </div>
-      <button type="button" class="fs-5 bg-white">Comments</button>
+      <button type="button" class="fs-5 bg-white" data-bs-toggle="modal" data-bs-target="#recipe-${recipe.idMeal}-modal">Comments</button>
     </div>`;
 
     recipeRow.appendChild(recipeCard);
