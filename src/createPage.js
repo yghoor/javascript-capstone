@@ -58,7 +58,7 @@ export function addModal(recipeInfo) {
         </div>
 
         <div class="d-flex flex-column align-items-center gap-4">
-          <h2 class="modal-title" id="recipe-${recipeInfo.idMeal}-modal-label">Recipe-${recipeInfo.strMeal}</h2>
+          <h2 class="modal-title" id="recipe-${recipeInfo.idMeal}-modal-label">${recipeInfo.strMeal}</h2>
           
           <h4>Ingredients</h4>
 
