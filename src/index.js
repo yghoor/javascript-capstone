@@ -23,7 +23,11 @@ async function fetchRecipesAndCreatePage() {
       breakfastMeals = result.meals;
     });
 
-  await createRecipePage(breakfastMeals, 'breakfast');
+  createRecipePage(breakfastMeals, 'breakfast');
+
+  breakfastMeals.forEach((meal) => {
+    fetchRecipeAndaddModal(meal.idMeal);
+  });
 }
 
 fetchRecipesAndCreatePage();
