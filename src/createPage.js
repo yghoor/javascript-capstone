@@ -3,7 +3,7 @@ import heartFilledIcon from './heart-filled-icon.png';
 
 const categories = document.getElementById('categories');
 
-export default function createRecipePage(recipeArray, category) {
+export function createRecipePage(recipeArray, category) {
   const page = document.createElement('section');
   page.id = `${category}-page`;
 
