@@ -28,7 +28,7 @@ async function initialiseAPILikesArray(appId) {
   );
 }
 
-async function addModalToPage(recipeId) {
+async function addModalToPage(recipeId, appId) {
   let recipeData;
   await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
     .then((response) => response.json())
