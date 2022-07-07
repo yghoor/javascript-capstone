@@ -55,5 +55,5 @@ async function addRecipesToPage(appId) {
   });
 }
 
-fetchRecipesAndCreatePage();
+addRecipesToPage(appId);
 displayIcons();
