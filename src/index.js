@@ -41,8 +41,10 @@ async function addModalToPage(recipeId, appId) {
   addSubmitCommentListener(recipeId, appId);
 }
 
-async function addRecipesToPage(appId) {
-  await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast')
+function clearPage() {
+  document.getElementById('recipes-section').innerHTML = '';
+}
+
     .then((response) => response.json())
     .then((result) => {
       breakfastMeals = result.meals;
