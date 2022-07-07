@@ -111,9 +111,9 @@ export async function addSubmitCommentListener(recipeId, appId) {
 }
 
 export function addDisplayCommentsListener(recipeId, appId) {
-  const commentsButton = document.getElementById(`recipe-${recipeId}-comments-btn`);
+  const recipeInfoButton = document.getElementById(`recipe-${recipeId}-info-btn`);
 
-  commentsButton.addEventListener('click', () => {
+  recipeInfoButton.addEventListener('click', () => {
     displayItemComments(recipeId, appId);
   });
 }
