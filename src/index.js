@@ -22,7 +22,7 @@ async function addModalToPage(recipeId) {
   addSubmitCommentListener(recipeId, appId);
 }
 
-async function fetchRecipesAndCreatePage() {
+async function addRecipesToPage(appId) {
   await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast')
     .then((response) => response.json())
     .then((result) => {
