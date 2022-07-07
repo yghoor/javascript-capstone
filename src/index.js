@@ -45,16 +45,21 @@ function clearPage() {
   document.getElementById('recipes-section').innerHTML = '';
 }
 
+async function addRecipesToPage(appId, category) {
+  clearPage();
+
+  let categoryMeals;
+  await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
     .then((response) => response.json())
     .then((result) => {
-      breakfastMeals = result.meals;
+      categoryMeals = result.meals;
     });
 
-  createRecipePage(breakfastMeals, 'breakfast');
+  createRecipePage(categoryMeals, category);
   initialiseAPILikesArray(appId);
 
-  breakfastMeals.forEach((meal) => {
-    addModalToPage(meal.idMeal);
+  categoryMeals.forEach((meal) => {
+    addModalToPage(meal.idMeal, appId);
     displayLikeCount(meal.idMeal, appId);
     addLikeListener(meal.idMeal, appId);
     addDisplayCommentsListener(meal.idMeal, appId);
