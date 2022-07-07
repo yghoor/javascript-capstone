@@ -98,12 +98,12 @@ export function addModal(recipeInfo) {
 
           <form method="post" id="recipe-${recipeInfo.idMeal}-comment-form" class="d-flex flex-column align-items-start gap-4">
             <label>
-              <input type="text" id="title" maxlength="60" placeholder="Your name" class="border-2 border-dark rounded-3 px-2 w-75" required />
+              <input type="text" id="name" maxlength="60" placeholder="Your name" class="border-2 border-dark rounded-3 px-2 w-75" required />
             </label>
        
             <label class="textarea">
               <textarea
-                id="message"
+                id="comment"
                 name="message"
                 maxlength="500"
                 placeholder="Your insights"
