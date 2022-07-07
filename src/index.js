@@ -1,6 +1,9 @@
 import './style.css';
 import displayIcons from './displayIcons.js';
 import { addModal, createRecipePage } from './createPage.js';
+import {
+  displayLikeCount, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
+} from './add-comments-and-likes.js';
 
 let breakfastMeals;
 
