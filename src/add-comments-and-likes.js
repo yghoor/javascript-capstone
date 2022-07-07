@@ -73,3 +73,22 @@ async function displayItemComments(recipeId, appId) {
     commentCard.children[0].children[2].textContent = `Date: ${comment.creation_date}`;
   });
 }
+
+async function submitAndDisplayComment(appId, recipeId, username, comment) {
+  await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: `${recipeId}`,
+        username,
+        comment,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    },
+  );
+
+  displayItemComments(recipeId, appId);
+}
