@@ -9,7 +9,7 @@ const appId = '56YthjGYMUyx30Ur3ZpO';
 
 let breakfastMeals;
 
-async function fetchRecipeAndaddModal(recipeId) {
+async function addModalToPage(recipeId) {
   let recipeData;
   await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
     .then((response) => response.json())
