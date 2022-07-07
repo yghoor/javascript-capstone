@@ -37,6 +37,7 @@ export function createRecipePage(recipeArray, category) {
   });
 
   categories.appendChild(page);
+  addHeartToggleListeners();
 }
 
 export function addModal(recipeInfo) {
