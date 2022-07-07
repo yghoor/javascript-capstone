@@ -40,7 +40,7 @@ export function createRecipePage(recipeArray, category) {
   addHeartToggleListeners();
 }
 
-export function addModal(recipeInfo) {
+export function createRecipeModal(recipeInfo) {
   const modal = document.createElement('div');
   modal.id = `recipe-${recipeInfo.idMeal}-modal`;
   modal.className = 'modal fade';

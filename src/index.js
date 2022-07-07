@@ -1,6 +1,6 @@
 import './style.css';
 import displayIcons from './displayIcons.js';
-import { addModal, createRecipePage } from './createPage.js';
+import { createRecipeModal, createRecipePage } from './createPage.js';
 import {
   displayLikeCount, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
 } from './add-comments-and-likes.js';
@@ -37,7 +37,7 @@ async function addModalToPage(recipeId, appId) {
       recipeData = result.meals[0];
     });
 
-  addModal(recipeData);
+  createRecipeModal(recipeData);
   addSubmitCommentListener(recipeId, appId);
 }
 
