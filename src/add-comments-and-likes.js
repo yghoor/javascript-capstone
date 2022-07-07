@@ -22,3 +22,27 @@ export async function displayLikeCount(recipeId, appId) {
     }
   });
 }
+
+export function addLikeListener(recipeId, appId) {
+  const likeBtn = document.getElementById(`recipe-${recipeId}-like-btn`);
+
+  likeBtn.addEventListener('click', () => {
+    setTimeout(async () => {
+      await fetch(
+        `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            item_id: `${recipeId}`,
+          }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        },
+      );
+
+      displayLikeCount(recipeId, appId);
+    });
+  });
+}
+
