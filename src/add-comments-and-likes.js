@@ -110,3 +110,10 @@ export async function addSubmitCommentListener(recipeId, appId) {
   });
 }
 
+export function addDisplayCommentsListener(recipeId, appId) {
+  const commentsButton = document.getElementById(`recipe-${recipeId}-comments-btn`);
+
+  commentsButton.addEventListener('click', () => {
+    displayItemComments(recipeId, appId);
+  });
+}
