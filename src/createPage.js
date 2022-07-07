@@ -21,7 +21,7 @@ export function createRecipePage(recipeArray, category) {
     <div class="card-body d-flex flex-column justify-content-center align-items-center gap-3">
       <h5 class="fs-4 card-title my-2">${recipe.strMeal}</h5>
 
-      <div>
+      <div class="likes-div">
         <span class="fs-5 fw-normal">5 Likes</span>
 
         <button class="bg-white border-0">
