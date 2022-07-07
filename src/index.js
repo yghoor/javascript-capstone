@@ -87,4 +87,5 @@ dessertPageLink.addEventListener('click', () => {
   addRecipesToPage(dessertAppId, 'Dessert');
 });
 
+addRecipesToPage(breakfastAppId, 'Breakfast');
 displayIcons();
