@@ -48,7 +48,7 @@ async function addRecipesToPage(appId) {
   initialiseAPILikesArray(appId);
 
   breakfastMeals.forEach((meal) => {
-    fetchRecipeAndaddModal(meal.idMeal);
+    addModalToPage(meal.idMeal);
   });
 }
 
