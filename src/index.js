@@ -50,6 +50,7 @@ async function addRecipesToPage(appId) {
   breakfastMeals.forEach((meal) => {
     addModalToPage(meal.idMeal);
     displayLikeCount(meal.idMeal, appId);
+    addLikeListener(meal.idMeal, appId);
   });
 }
 
