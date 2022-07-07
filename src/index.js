@@ -6,6 +6,8 @@ import {
 } from './add-comments-and-likes.js';
 
 const breakfastAppId = '56YthjGYMUyx30Ur3ZpO';
+const vegetarianAppId = 'tpqFWohbJksKNRX8rJNi';
+const dessertAppId = 'kgwMzsiEvd8aYH9dQMb0';
 
 async function initialiseAPILikesArray(appId) {
   fetch(
