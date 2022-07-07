@@ -5,7 +5,7 @@ import {
   displayLikeCount, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
 } from './add-comments-and-likes.js';
 
-const appId = '56YthjGYMUyx30Ur3ZpO';
+const breakfastAppId = '56YthjGYMUyx30Ur3ZpO';
 
 async function initialiseAPILikesArray(appId) {
   fetch(
