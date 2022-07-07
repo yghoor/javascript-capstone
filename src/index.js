@@ -28,8 +28,6 @@ async function initialiseAPILikesArray(appId) {
   );
 }
 
-let breakfastMeals;
-
 async function addModalToPage(recipeId) {
   let recipeData;
   await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
