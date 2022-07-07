@@ -91,4 +91,6 @@ async function submitAndDisplayComment(appId, recipeId, username, comment) {
   );
 
   displayItemComments(recipeId, appId);
+  // Scroll to bottom of page after comment is added to page
+  document.getElementById(`recipe-${recipeId}-modal`).scrollTop = document.getElementById(`recipe-${recipeId}-modal`).scrollHeight;
 }
