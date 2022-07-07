@@ -19,6 +19,7 @@ async function addModalToPage(recipeId) {
     });
 
   addModal(recipeData);
+  addSubmitCommentListener(recipeId, appId);
 }
 
 async function fetchRecipesAndCreatePage() {
