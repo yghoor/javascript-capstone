@@ -46,3 +46,30 @@ export function addLikeListener(recipeId, appId) {
   });
 }
 
+async function displayItemComments(recipeId, appId) {
+  let itemComments;
+  await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${recipeId}`)
+    .then((response) => response.json())
+    .then((result) => {
+      itemComments = result;
+    });
+
+  const commentsDiv = document.getElementById(`recipe-${recipeId}-comments`);
+  commentsDiv.innerHTML = '';
+  itemComments.forEach((comment) => {
+    const commentCard = document.createElement('div');
+    commentCard.className = 'col card d-flex flex-column justify-content-center align-items-center text-center py-3 my-1';
+    commentCard.innerHTML = `
+    <div class="card-body d-flex flex-column justify-content-center align-items-center gap-1">
+      <h5 class="fs-4 card-title"></h5>
+
+      <p></p>
+
+      <span></span>
+    </div>`;
+    commentsDiv.appendChild(commentCard);
+    commentCard.children[0].children[0].textContent = `${comment.username}`;
+    commentCard.children[0].children[1].textContent = `${comment.comment}`;
+    commentCard.children[0].children[2].textContent = `Date: ${comment.creation_date}`;
+  });
+}
