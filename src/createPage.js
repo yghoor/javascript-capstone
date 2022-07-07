@@ -9,7 +9,7 @@ export function createRecipePage(recipeArray, category) {
   page.id = `${category}-page`;
 
   const recipeRow = document.createElement('div');
-  recipeRow.className = 'row row-cols-3';
+  recipeRow.className = 'row row-cols-4';
   page.appendChild(recipeRow);
 
   recipeArray.forEach((recipe) => {
