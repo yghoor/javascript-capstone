@@ -51,6 +51,7 @@ async function addRecipesToPage(appId) {
     addModalToPage(meal.idMeal);
     displayLikeCount(meal.idMeal, appId);
     addLikeListener(meal.idMeal, appId);
+    addDisplayCommentsListener(meal.idMeal, appId);
   });
 }
 
