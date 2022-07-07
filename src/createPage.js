@@ -96,7 +96,7 @@ export function addModal(recipeInfo) {
 
           <h4>Add a comment</h4>
 
-          <form method="post" id="add-book" class="d-flex flex-column align-items-start gap-4">
+          <form method="post" id="recipe-${recipeInfo.idMeal}-comment-form" class="d-flex flex-column align-items-start gap-4">
             <label>
               <input type="text" id="title" maxlength="60" placeholder="Your name" class="border-2 border-dark rounded-3 px-2 w-75" required />
             </label>
