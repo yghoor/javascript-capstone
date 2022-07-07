@@ -5,6 +5,8 @@ import {
   displayLikeCount, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
 } from './add-comments-and-likes.js';
 
+const appId = '56YthjGYMUyx30Ur3ZpO';
+
 let breakfastMeals;
 
 async function fetchRecipeAndaddModal(recipeId) {
