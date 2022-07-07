@@ -66,5 +66,25 @@ async function addRecipesToPage(appId, category) {
   });
 }
 
-addRecipesToPage(appId);
+breakfastPageLink.addEventListener('click', () => {
+  breakfastPageLink.classList.add('text-decoration-underline', 'fw-bold');
+  vegetarianPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  dessertPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  addRecipesToPage(breakfastAppId, 'Breakfast');
+});
+
+vegetarianPageLink.addEventListener('click', () => {
+  vegetarianPageLink.classList.add('text-decoration-underline', 'fw-bold');
+  breakfastPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  dessertPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  addRecipesToPage(vegetarianAppId, 'Vegetarian');
+});
+
+dessertPageLink.addEventListener('click', () => {
+  dessertPageLink.classList.add('text-decoration-underline', 'fw-bold');
+  breakfastPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  vegetarianPageLink.classList.remove('text-decoration-underline', 'fw-bold');
+  addRecipesToPage(dessertAppId, 'Dessert');
+});
+
 displayIcons();
