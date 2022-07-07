@@ -9,6 +9,10 @@ const breakfastAppId = '56YthjGYMUyx30Ur3ZpO';
 const vegetarianAppId = 'tpqFWohbJksKNRX8rJNi';
 const dessertAppId = 'kgwMzsiEvd8aYH9dQMb0';
 
+const breakfastPageLink = document.getElementById('breakfast-page-link');
+const vegetarianPageLink = document.getElementById('vegetarian-page-link');
+const dessertPageLink = document.getElementById('dessert-page-link');
+
 async function initialiseAPILikesArray(appId) {
   fetch(
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
