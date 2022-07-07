@@ -94,3 +94,19 @@ async function submitAndDisplayComment(appId, recipeId, username, comment) {
   // Scroll to bottom of page after comment is added to page
   document.getElementById(`recipe-${recipeId}-modal`).scrollTop = document.getElementById(`recipe-${recipeId}-modal`).scrollHeight;
 }
+
+export async function addSubmitCommentListener(recipeId, appId) {
+  const commentForm = document.getElementById(`recipe-${recipeId}-comment-form`);
+
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = commentForm.elements.name.value;
+    const comment = commentForm.elements.comment.value;
+
+    submitAndDisplayComment(appId, recipeId, username, comment);
+
+    commentForm.reset();
+  });
+}
+
