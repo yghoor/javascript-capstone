@@ -7,6 +7,21 @@ import {
 
 const appId = '56YthjGYMUyx30Ur3ZpO';
 
+async function initialiseAPILikesArray(appId) {
+  fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: 'initialiser',
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    },
+  );
+}
+
 let breakfastMeals;
 
 async function addModalToPage(recipeId) {
