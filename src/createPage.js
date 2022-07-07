@@ -2,7 +2,7 @@ import { addHeartToggleListeners } from './add-comments-and-likes.js';
 import heartEmptyIcon from './heart-empty-icon.png';
 import heartFilledIcon from './heart-filled-icon.png';
 
-const categories = document.getElementById('categories');
+const recipesSection = document.getElementById('recipes-section');
 
 export function createRecipePage(recipeArray, category) {
   const page = document.createElement('section');
@@ -36,7 +36,7 @@ export function createRecipePage(recipeArray, category) {
     recipeRow.appendChild(recipeCard);
   });
 
-  categories.appendChild(page);
+  recipesSection.appendChild(page);
   addHeartToggleListeners();
 }
 
@@ -123,5 +123,5 @@ export function addModal(recipeInfo) {
     </div>
   </div>`;
 
-  categories.appendChild(modal);
+  recipesSection.appendChild(modal);
 }
