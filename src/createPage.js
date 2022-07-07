@@ -105,7 +105,7 @@ export function addModal(recipeInfo) {
               <textarea
                 id="comment"
                 name="message"
-                maxlength="500"
+                maxlength="230"
                 placeholder="Your insights"
                 class="border-2 border-dark rounded-3 px-2 w-100"
                 required
