@@ -1,3 +1,4 @@
+import { addHeartToggleListeners } from './add-comments-and-likes.js';
 import heartEmptyIcon from './heart-empty-icon.png';
 import heartFilledIcon from './heart-filled-icon.png';
 
