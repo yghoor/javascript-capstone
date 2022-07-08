@@ -7,13 +7,23 @@ export function addHeartToggleListeners() {
   });
 }
 
-export async function displayLikeCount(recipeId, appId) {
+export async function displayAllLikeCounts(appId) {
   let likeCounts;
   await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
     .then((response) => response.json())
     .then((result) => {
       likeCounts = result;
     });
+
+  const recipeLikeCountSpans = document.querySelectorAll('.likes-div span');
+  recipeLikeCountSpans.forEach((recipeLikeCountSpan) => {
+    likeCounts.forEach((likeCount) => {
+      if (recipeLikeCountSpan.id === `recipe-${likeCount.item_id}-like-count`) {
+        recipeLikeCountSpan.textContent = `Likes: ${likeCount.likes}`;
+      }
+    });
+  });
+}
 
   const recipeLikeCountSpan = document.getElementById(`recipe-${recipeId}-like-count`);
   likeCounts.forEach((likeCount) => {
