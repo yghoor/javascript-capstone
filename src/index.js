@@ -2,7 +2,7 @@ import './style.css';
 import displayIcons from './displayIcons.js';
 import { createRecipeModal, createRecipePage } from './createPage.js';
 import {
-  displayLikeCount, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
+  displayAllLikeCounts, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
 } from './add-comments-and-likes.js';
 
 const breakfastAppId = '56YthjGYMUyx30Ur3ZpO';
