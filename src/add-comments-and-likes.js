@@ -34,6 +34,15 @@ function addLikeCountToPage(likeCountsArray, recipeId) {
   });
 }
 
+export async function refreshLikeCount(recipeId, appId) {
+  let likeCounts;
+  await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
+    .then((response) => response.json())
+    .then((result) => {
+      likeCounts = result;
+    });
+
+  addLikeCountToPage(likeCounts, recipeId);
 }
 
 export function addLikeListener(recipeId, appId) {
