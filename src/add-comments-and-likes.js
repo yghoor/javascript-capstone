@@ -1,6 +1,6 @@
 export function addHeartToggleListeners() {
   document.querySelectorAll('.heart-empty-icon').forEach((heartIcon) => {
-    heartIcon.addEventListener('click', () => {
+    heartIcon.addEventListener('mousedown', () => {
       heartIcon.classList.toggle('d-none');
       heartIcon.nextElementSibling.classList.toggle('d-none');
     });
@@ -48,7 +48,7 @@ export async function refreshLikeCount(recipeId, appId) {
 export function addLikeListener(recipeId, appId) {
   const likeBtn = document.getElementById(`recipe-${recipeId}-like-btn`);
 
-  likeBtn.addEventListener('click', () => {
+  likeBtn.addEventListener('mousedown', () => {
     setTimeout(async () => {
       await fetch(
         `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
@@ -135,7 +135,7 @@ export async function addSubmitCommentListener(recipeId, appId) {
 export function addDisplayCommentsListener(recipeId, appId) {
   const recipeInfoButton = document.getElementById(`recipe-${recipeId}-info-btn`);
 
-  recipeInfoButton.addEventListener('click', () => {
+  recipeInfoButton.addEventListener('mousedown', () => {
     displayItemComments(recipeId, appId);
   });
 }
