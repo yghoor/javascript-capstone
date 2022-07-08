@@ -1,3 +1,4 @@
+let likeCounts = [];
 export function addHeartToggleListeners() {
   document.querySelectorAll('.heart-empty-icon').forEach((heartIcon) => {
     heartIcon.addEventListener('mousedown', () => {
@@ -8,7 +9,6 @@ export function addHeartToggleListeners() {
 }
 
 export async function displayAllLikeCounts(appId) {
-  let likeCounts;
   await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
     .then((response) => response.json())
     .then((result) => {
@@ -25,46 +25,34 @@ export async function displayAllLikeCounts(appId) {
   });
 }
 
-function addLikeCountToPage(likeCountsArray, recipeId) {
+async function updateLikeCount(recipeId) {
   const recipeLikeCountSpan = document.getElementById(`recipe-${recipeId}-like-count`);
-  likeCountsArray.forEach((likeCount) => {
+  likeCounts.forEach((likeCount) => {
     if (likeCount.item_id === recipeId) {
+      likeCount.likes += 1;
       recipeLikeCountSpan.textContent = `Likes: ${likeCount.likes}`;
     }
   });
-}
-
-export async function refreshLikeCount(recipeId, appId) {
-  let likeCounts;
-  await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
-    .then((response) => response.json())
-    .then((result) => {
-      likeCounts = result;
-    });
-
-  addLikeCountToPage(likeCounts, recipeId);
 }
 
 export function addLikeListener(recipeId, appId) {
   const likeBtn = document.getElementById(`recipe-${recipeId}-like-btn`);
 
   likeBtn.addEventListener('mousedown', () => {
-    setTimeout(async () => {
-      await fetch(
-        `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            item_id: `${recipeId}`,
-          }),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
+    fetch(
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          item_id: `${recipeId}`,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
         },
-      );
+      },
+    );
 
-      refreshLikeCount(recipeId, appId);
-    });
+    updateLikeCount(recipeId);
   });
 }
 
