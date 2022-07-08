@@ -23,7 +23,7 @@ export function createRecipePage(recipeArray, category) {
       <h5 class="fs-4 card-title my-2">${recipe.strMeal}</h5>
 
       <div class="likes-div">
-        <span id="recipe-${recipe.idMeal}-like-count" class="fs-5 fw-normal">Likes: 0</span>
+        <span id="recipe-${recipe.idMeal}-like-count" class="fs-5 fw-normal">Likes:</span>
 
         <button id="recipe-${recipe.idMeal}-like-btn" class="bg-white border-0">
           <img src="${heartEmptyIcon}" alt="" class="heart-empty-icon" />
