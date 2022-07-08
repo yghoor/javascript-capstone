@@ -1,4 +1,5 @@
 let likeCounts = [];
+
 export function addHeartToggleListeners() {
   document.querySelectorAll('.heart-empty-icon').forEach((heartIcon) => {
     heartIcon.addEventListener('mousedown', () => {
@@ -22,6 +23,9 @@ export async function displayAllLikeCounts(appId) {
         recipeLikeCountSpan.textContent = `Likes: ${likeCount.likes}`;
       }
     });
+    if (recipeLikeCountSpan.textContent === 'Likes:') {
+      recipeLikeCountSpan.textContent = 'Likes: 0';
+    }
   });
 }
 
