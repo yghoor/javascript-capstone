@@ -63,7 +63,7 @@ export function addLikeListener(recipeId, appId) {
         },
       );
 
-      displayLikeCount(recipeId, appId);
+      refreshLikeCount(recipeId, appId);
     });
   });
 }
