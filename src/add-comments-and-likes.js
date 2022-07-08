@@ -25,12 +25,15 @@ export async function displayAllLikeCounts(appId) {
   });
 }
 
+function addLikeCountToPage(likeCountsArray, recipeId) {
   const recipeLikeCountSpan = document.getElementById(`recipe-${recipeId}-like-count`);
-  likeCounts.forEach((likeCount) => {
+  likeCountsArray.forEach((likeCount) => {
     if (likeCount.item_id === recipeId) {
-      recipeLikeCountSpan.textContent = `Likes: ${likeCount.likes} `;
+      recipeLikeCountSpan.textContent = `Likes: ${likeCount.likes}`;
     }
   });
+}
+
 }
 
 export function addLikeListener(recipeId, appId) {
