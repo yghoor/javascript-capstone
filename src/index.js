@@ -57,10 +57,10 @@ async function addRecipesToPage(appId, category) {
 
   createRecipePage(categoryMeals, category);
   initialiseAPILikesArray(appId);
+  displayAllLikeCounts(appId);
 
   categoryMeals.forEach((meal) => {
     addModalToPage(meal.idMeal, appId);
-    displayLikeCount(meal.idMeal, appId);
     addLikeListener(meal.idMeal, appId);
     addDisplayCommentsListener(meal.idMeal, appId);
   });
