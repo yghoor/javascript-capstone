@@ -7,3 +7,6 @@ export function displayRecipeCount(mealsArray, category) {
   navLink.innerHTML = `(${countRecipes(mealsArray)})`;
 }
 
+export function countComments(commentsArray) {
+  return commentsArray.length;
+}
