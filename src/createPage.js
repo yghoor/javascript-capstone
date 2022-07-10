@@ -117,6 +117,10 @@ export function createRecipeModal(recipeInfo) {
             <button type="submit" class="fs-4 bg-white px-2">Comment</button>
           </form>
 
+          <h4>
+            Comments
+          </h4>
+
           <div id="recipe-${recipeInfo.idMeal}-comments" class="container-fluid row row-cols-3"></div>
         </div>
       </div>
