@@ -10,3 +10,8 @@ export function displayRecipeCount(mealsArray, category) {
 export function countComments(commentsArray) {
   return commentsArray.length;
 }
+
+export function displayCommentCount(commentsArray, recipeId) {
+  const commentCount = document.getElementById(`recipe-${recipeId}-comment-count`);
+  commentCount.innerHTML = `(${countComments(commentsArray)})`;
+}
