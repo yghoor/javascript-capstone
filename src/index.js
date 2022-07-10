@@ -4,6 +4,7 @@ import { createRecipeModal, createRecipePage } from './createPage.js';
 import {
   displayAllLikeCounts, addLikeListener, addSubmitCommentListener, addDisplayCommentsListener,
 } from './add-comments-and-likes.js';
+import { displayRecipeCount } from './counters.js';
 
 const breakfastAppId = '56YthjGYMUyx30Ur3ZpO';
 const vegetarianAppId = 'tpqFWohbJksKNRX8rJNi';
