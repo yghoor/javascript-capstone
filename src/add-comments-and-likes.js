@@ -70,6 +70,8 @@ async function displayItemComments(recipeId, appId) {
       itemComments = result;
     });
 
+  displayCommentCount(itemComments, recipeId);
+
   const commentsDiv = document.getElementById(`recipe-${recipeId}-comments`);
   commentsDiv.innerHTML = '';
   itemComments.forEach((comment) => {
