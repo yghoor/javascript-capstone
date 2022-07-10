@@ -57,6 +57,7 @@ async function addRecipesToPage(appId, category) {
     });
 
   createRecipePage(categoryMeals, category);
+  displayRecipeCount(categoryMeals, category);
   initialiseAPILikesArray(appId);
   displayAllLikeCounts(appId);
 
