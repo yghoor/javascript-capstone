@@ -1,3 +1,5 @@
+import { displayCommentCount } from './counters.js';
+
 let likeCounts = [];
 
 export function addHeartToggleListeners() {
