@@ -119,6 +119,7 @@ export function createRecipeModal(recipeInfo) {
 
           <h4>
             Comments
+            <span id="recipe-${recipeInfo.idMeal}-comment-count"></span>
           </h4>
 
           <div id="recipe-${recipeInfo.idMeal}-comments" class="container-fluid row row-cols-3"></div>
